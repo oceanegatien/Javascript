@@ -1,15 +1,15 @@
 var a = nombre1;
-var b = nomre2;
+var b = nombre2;
 
 
 function nombre1() {
 	
+	
 }
 
-$(button).on('click', function(){
+$('button').on('click', function(){
 	var buttonPressed = $(this).html();
-	console.log(buttonPressed);
-
+	console.log(buttonPressed);}
 
 
 function afficheur() {
@@ -27,7 +27,7 @@ function afficheur() {
 
 
 
-var operation = new array();
+var operation = new array(nombre1, nombre2);
 	operation["plus"] = function addition() {
 		return a + b;}
 	operation["moins"] = function soustraction() {
@@ -35,10 +35,10 @@ var operation = new array();
 	operation["multiplier"] = function multiplication() {
 		return a * b;}
 	operation["diviser"] = function division() {
-	}
-	if (b = 0) {
-		alert("you can't divide by 0")
-	}
+		return(a / b);}
+	if (b == 0) {
+		alert("you can't divide by 0")}
+
 
 
 
