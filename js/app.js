@@ -1,74 +1,79 @@
-var a = nombre1;
-var b = nombre2;
+var values = [];
+var separators = [];
+var result;
+var i;
 
 
-function nombre1() {
-	
-	
+for (i = 0; i <= 9; i++) {
+	document.getElementById('btn'+i).addEventListener('click', function(event){enterValue(event)},false);
 }
 
-$('button').on('click', function(){
-	var buttonPressed = $(this).html();
-	console.log(buttonPressed);}
+document.getElementById('plus').addEventListener('click', function(event){addSeparator(event)},false);
+document.getElementById('moins').addEventListener('click', function(event){addSeparator(event)},false);
+document.getElementById('multiplier').addEventListener('click', function(event){addSeparator(event)},false);
+document.getElementById('diviser').addEventListener('click', function(event){addSeparator(event)},false);
+document.getElementById('egal').addEventListener('click', function(event){compute(event)},false);
+document.getElementById('erase').addEventListener('click', function(event){erase(event)},false);
+document.getElementById('reset').addEventListener('click', function(event){reset(event)},false);
 
-
-function afficheur() {
-	$()
+function enterValue(event) {
+	document.getElementById('afficheur').value+=event.toElement.innerHTML;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-var operation = new array(nombre1, nombre2);
-	operation["plus"] = function addition() {
-		return a + b;}
-	operation["moins"] = function soustraction() {
-		return a - b;}
-	operation["multiplier"] = function multiplication() {
-		return a * b;}
-	operation["diviser"] = function division() {
-		return(a / b);}
-	if (b == 0) {
-		alert("you can't divide by 0")}
-
-
-
-
-
-
-
-
-/*
-function addition(a, b) {
-	return a +b;
+function addValue() {
+	if(document.getElementById('afficheur').value != "")
+	{
+		values.push(Number(document.getElementById('afficheur').value));
+		return true;
 	}
-
-console.log(addition(44, 6))
-
-
-
-
-
-
-
-/*
-function division(a, b) {
-	return a /b;}
-function multiplication(a, b) {
-	return a / b
+	return false;
 }
-if (b> 0) {
-	console.log(a / b);
-}else {
-	console.log("Can't divide by 0");}
-}
-*/
 
+function addSeparator(event) {
+	if(addValue())
+	{
+		separators.push(event.toElement.innerHTML);
+		erase();
+	}
+}
+
+function compute() {
+	if(addValue())
+	{
+		separators.push(event.toElement.innerHTML);
+		erase();
+		if (values.length > 1){
+			result = values[0];
+			for(i = 1; i < values.length;i++){
+				if (separators[i - 1] == "+")
+				{
+					result += values[i]; //result = result + 6;
+				}
+				if (separators[i - 1] == "-")
+				{
+					result -= values[i];
+				}
+				if (separators[i - 1] == "x")
+				{
+					result *= values[i]; //result = result + 6;
+				}
+				if (separators[i - 1] == "/")
+				{
+					result /= values[i];
+				}
+			}
+			document.getElementById('afficheur').value = result;
+			
+		}
+	}
+}
+
+
+function reset() {
+	values = [];
+	separators = [];
+	erase();
+}
+function erase() {
+	document.getElementById('afficheur').value = "";	
+}
