@@ -1,0 +1,16 @@
+button {
+	border-radius:24px 0 24px 0;
+	background: #d34836;
+	border:none;
+	color:#fff;
+	font:bold 24px Verdana;
+	padding:12px 0 12px 0;
+	display: inline-block;
+	white-space: 4px;
+	width: 15%;
+	text-align: center;
+	margin: auto;
+}
+.button123 .button456 .button789 .operator{
+	text-align: center;
+}
