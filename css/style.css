@@ -1,6 +1,16 @@
+
+body{
+	padding-bottom: 35%;
+	margin: 5% 5%;
+	background-image: url(https://cdn.pixabay.com/photo/2016/10/28/01/24/pc-1776996_960_720.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
 button {
 	border-radius:24px 0 24px 0;
-	background: #d34836;
+	background: grey;
 	border:none;
 	color:#fff;
 	font:bold 24px Verdana;
@@ -10,7 +20,29 @@ button {
 	width: 15%;
 	text-align: center;
 	margin: auto;
+	
 }
-.button123 .button456 .button789 .operator{
+.afficheur{
 	text-align: center;
+
+}
+.egal{
+	margin-top: 8%;
+	text-align: center;
+}
+.button123 {
+	text-align: center;
+}
+.button456{
+	text-align: center;
+}
+.button789{
+	text-align: center;
+}
+#btn0{
+	text-align: center;
+
+}
+#diviser, #multiplier, #moins, #plus, #erase, #reset, #egal{
+	background: blue;
 }
