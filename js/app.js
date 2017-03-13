@@ -5,17 +5,28 @@ var i;
 
 
 for (i = 0; i <= 9; i++) {
-	document.getElementById('btn'+i).addEventListener('click', function(event){enterValue(event)},false);
+	$('#btn'+i).click(function(event){enterValue(event)});
+}
+function erase() {
+	$('#afficheur').val("");
 }
 
-document.getElementById('plus').addEventListener('click', function(event){addSeparator(event)},false);
+$('#plus').click(function(event){addSeparator(event)});
+$('#moins').click(function(event){addSeparator(event)});
+$('#multiplier').click(function(event){addSeparator(event)});
+$('#diviser').click(function(event){addSeparator(event)});
+$('#egal').click(function(event){compute(event)});
+$('#erase').click(function(event){erase(event)});
+$('#reset').click(function(event){reset(event)});
+
+/* ancienne ligne de code en java => transformer en jquery
 document.getElementById('moins').addEventListener('click', function(event){addSeparator(event)},false);
 document.getElementById('multiplier').addEventListener('click', function(event){addSeparator(event)},false);
 document.getElementById('diviser').addEventListener('click', function(event){addSeparator(event)},false);
 document.getElementById('egal').addEventListener('click', function(event){compute(event)},false);
 document.getElementById('erase').addEventListener('click', function(event){erase(event)},false);
 document.getElementById('reset').addEventListener('click', function(event){reset(event)},false);
-
+*/
 function enterValue(event) {
 	document.getElementById('afficheur').value+=event.toElement.innerHTML;
 }
@@ -62,7 +73,7 @@ function compute() {
 					result /= values[i];
 				}
 			}
-			document.getElementById('afficheur').value = result;
+			$('#afficheur').val(result);
 			
 		}
 	}
@@ -73,7 +84,4 @@ function reset() {
 	values = [];
 	separators = [];
 	erase();
-}
-function erase() {
-	document.getElementById('afficheur').value = "";	
 }
